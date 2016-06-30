@@ -3,8 +3,42 @@
 	box-sizing: border-box;
 }
 
-h1 {
+h4 {
 	font-size: 300px;
 	text-align: center;
 	color: fuchsia;
 }
+
+a {
+
+	color: inherit;
+	text-decoration: none;
+}
+
+div.listing {
+	display: inline-block;
+	font-size: 15px;
+	border: 2px solid tomato;
+	width: 33%;
+	margin: 2%;
+	padding: 3%;
+	
+		.price {
+			color: limegreen;
+
+		}
+
+		#button {
+			text-align: center;
+		    background: royalblue;
+		    color: white;
+		    padding: 1%;
+		    width: 13%;
+		    border-radius: 10%;
+		    border: 1px solid #adaeaa
+		    padding: 1%;
+			width: 30%;
+		}
+
+}
+
