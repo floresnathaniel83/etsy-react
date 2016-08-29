@@ -20,6 +20,7 @@ input {
 	padding: 1%;
     border: 1px solid #5a605d;
     transition: .5s border ease;
+    background: lightblue;
     font-size: 18px;
     margin-bottom: 1%;
     margin-top: 1%;
@@ -27,7 +28,7 @@ input {
 
 input:focus {
     outline: none;
-    border: 3px solid black;
+    border: 5px solid black;
 }
 
 h1 {
@@ -75,6 +76,7 @@ div.listing {
 }
 
 .detailListing {
+	margin: 1%;
 	text-align: center;
 
 }

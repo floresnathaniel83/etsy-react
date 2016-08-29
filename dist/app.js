@@ -33260,6 +33260,7 @@ var app = function app() {
 	var EtsyRouter = _backbone2.default.Router.extend({
 
 		routes: {
+			"home": "showHomePage",
 			"search/:keywords": "doListingsSearch",
 			"details/:listing_id": "doDetailView",
 			"*catchall": "showHomePage"
@@ -33346,7 +33347,21 @@ var DetailView = _react2.default.createClass({
 	displayName: 'DetailView',
 
 	render: function render() {
-		return _react2.default.createElement('div', { className: 'detailListing' }, _react2.default.createElement('img', { src: this.props.listing.models[0].get('Images')[0].url_570xN }), _react2.default.createElement('h2', null, this.props.listing.models[0].get('description')), _react2.default.createElement('h3', null, '$', this.props.listing.models[0].get('price')));
+		return _react2.default.createElement('div', { className: 'detailContainer' }, _react2.default.createElement(Header, null), _react2.default.createElement('div', { className: 'detailListing' }, _react2.default.createElement('img', { src: this.props.listing.models[0].get('Images')[0].url_570xN }), _react2.default.createElement('h2', null, this.props.listing.models[0].get('description')), _react2.default.createElement('h3', null, '$', this.props.listing.models[0].get('price'))));
+	}
+});
+
+var Header = _react2.default.createClass({
+	displayName: 'Header',
+
+	_doSearch: function _doSearch(eventObj) {
+		if (eventObj.keyCode === 13) {
+			location.hash = "search/" + eventObj.target.value;
+		}
+	},
+
+	render: function render() {
+		return _react2.default.createElement('div', { className: 'headerContainer' }, _react2.default.createElement('h1', null, 'ETSY'), _react2.default.createElement('a', { href: '#home' }, _react2.default.createElement('span', null, 'Home')), _react2.default.createElement('span', null, 'Clothing & Accessories'), _react2.default.createElement('span', null, 'Jewelry'), _react2.default.createElement('span', null, 'Weddings'), _react2.default.createElement('span', null, 'Entertainment'), _react2.default.createElement('span', null, 'Craft Supplies'), _react2.default.createElement('span', null, 'Tools'), _react2.default.createElement('div', { id: 'searchBar' }, _react2.default.createElement('input', { placeholder: 'Search for items or shops', onKeyDown: this._doSearch })));
 	}
 });
 
@@ -33390,7 +33405,7 @@ var Header = _react2.default.createClass({
 	},
 
 	render: function render() {
-		return _react2.default.createElement('div', { className: 'headerContainer' }, _react2.default.createElement('h1', null, 'ETSY'), _react2.default.createElement('span', null, 'Clothing & Accessories'), _react2.default.createElement('span', null, 'Jewelry'), _react2.default.createElement('span', null, 'Weddings'), _react2.default.createElement('span', null, 'Entertainment'), _react2.default.createElement('span', null, 'Craft Supplies'), _react2.default.createElement('span', null, 'Tools'), _react2.default.createElement('div', { id: 'searchBar' }, _react2.default.createElement('input', { placeholder: 'Search for items or shops', onKeyDown: this._doSearch })));
+		return _react2.default.createElement('div', { className: 'headerContainer' }, _react2.default.createElement('h1', null, 'ETSY'), _react2.default.createElement('a', { href: '#home' }, _react2.default.createElement('span', null, 'Home')), _react2.default.createElement('span', null, 'Clothing & Accessories'), _react2.default.createElement('span', null, 'Jewelry'), _react2.default.createElement('span', null, 'Weddings'), _react2.default.createElement('span', null, 'Entertainment'), _react2.default.createElement('span', null, 'Craft Supplies'), _react2.default.createElement('span', null, 'Tools'), _react2.default.createElement('div', { id: 'searchBar' }, _react2.default.createElement('input', { placeholder: 'Search for items or shops', onKeyDown: this._doSearch })));
 	}
 });
 

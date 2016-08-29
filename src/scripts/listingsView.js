@@ -29,6 +29,7 @@ var Header = React.createClass({
 		return (
 			<div className="headerContainer">
 					<h1>ETSY</h1>
+					<a href="#home"><span>Home</span></a>
 					<span>Clothing & Accessories</span>
 					<span>Jewelry</span>
 					<span>Weddings</span>

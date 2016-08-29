@@ -42,6 +42,7 @@ const app = function() {
 	var EtsyRouter = Backbone.Router.extend ({
 
 	routes: {
+		"home" : "showHomePage",
 		"search/:keywords" : "doListingsSearch",
 		"details/:listing_id" : "doDetailView", 
 		"*catchall" : "showHomePage"
