@@ -5,12 +5,14 @@ var DetailView = React.createClass({
 
 	render: function() {
 		return (
-			<div className="listing">
-				<img src = {this.props.listing.models[0].get('Images')[0].url_170x135} />
-				<p>{this.props.listing.models[0].get('description')}</p>
-				<p>{this.props.listing.models[0].get('price')}</p>
+			<div className="detailListing">
+				<img src = {this.props.listing.models[0].get('Images')[0].url_570xN} />
+				<h2>{this.props.listing.models[0].get('description')}</h2>
+				<h3>${this.props.listing.models[0].get('price')}</h3>
+
 			</div>
 			)
 	}
 })
+
 export default DetailView

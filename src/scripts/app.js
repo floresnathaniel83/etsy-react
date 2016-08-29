@@ -39,7 +39,6 @@ const app = function() {
 
 })
 	
-
 	var EtsyRouter = Backbone.Router.extend ({
 
 	routes: {

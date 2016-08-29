@@ -33346,9 +33346,10 @@ var DetailView = _react2.default.createClass({
 	displayName: 'DetailView',
 
 	render: function render() {
-		return _react2.default.createElement('div', { className: 'listing' }, _react2.default.createElement('img', { src: this.props.listing.models[0].get('Images')[0].url_170x135 }), _react2.default.createElement('p', null, this.props.listing.models[0].get('description')), _react2.default.createElement('p', null, this.props.listing.models[0].get('price')));
+		return _react2.default.createElement('div', { className: 'detailListing' }, _react2.default.createElement('img', { src: this.props.listing.models[0].get('Images')[0].url_570xN }), _react2.default.createElement('h2', null, this.props.listing.models[0].get('description')), _react2.default.createElement('h3', null, '$', this.props.listing.models[0].get('price')));
 	}
 });
+
 exports.default = DetailView;
 
 },{"react":169,"react-dom":31}],173:[function(require,module,exports){
@@ -33389,7 +33390,7 @@ var Header = _react2.default.createClass({
 	},
 
 	render: function render() {
-		return _react2.default.createElement('div', { className: 'headerContainer' }, _react2.default.createElement('h4', null, 'ETSY'), _react2.default.createElement('input', { placeholder: 'What are you shopping for?', onKeyDown: this._doSearch }));
+		return _react2.default.createElement('div', { className: 'headerContainer' }, _react2.default.createElement('h1', null, 'ETSY'), _react2.default.createElement('span', null, 'Clothing & Accessories'), _react2.default.createElement('span', null, 'Jewelry'), _react2.default.createElement('span', null, 'Weddings'), _react2.default.createElement('span', null, 'Entertainment'), _react2.default.createElement('span', null, 'Craft Supplies'), _react2.default.createElement('span', null, 'Tools'), _react2.default.createElement('div', { id: 'searchBar' }, _react2.default.createElement('input', { placeholder: 'Search for items or shops', onKeyDown: this._doSearch })));
 	}
 });
 
@@ -33414,7 +33415,7 @@ var Listing = _react2.default.createClass({
 	displayName: 'Listing',
 
 	render: function render() {
-		return _react2.default.createElement('div', { className: 'listing' }, _react2.default.createElement('h4', null, this.props.listingModel.get('title')), _react2.default.createElement('img', { src: this.props.listingModel.get('Images')[0].url_170x135 }), _react2.default.createElement('p', { 'class': 'price' }, this.props.listingModel.get('price')), _react2.default.createElement('div', { id: 'button' }, _react2.default.createElement('a', { href: '#details/' + this.props.listingModel.get('listing_id') }, 'full page')));
+		return _react2.default.createElement('div', { className: 'listing' }, _react2.default.createElement('a', { href: '#details/' + this.props.listingModel.get('listing_id') }, _react2.default.createElement('img', { src: this.props.listingModel.get('Images')[0].url_170x135 }), _react2.default.createElement('h4', null, this.props.listingModel.get('title')), _react2.default.createElement('p', { 'class': 'price' }, '$', this.props.listingModel.get('price'))));
 	}
 });
 

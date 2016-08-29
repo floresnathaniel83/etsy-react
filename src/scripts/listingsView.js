@@ -6,7 +6,6 @@ var ListingsView = React.createClass ({
 		return (
 
 			<div className="listingsView">
-
 				<Header listingColl = {this.props.listingColl} />
 				<ListingsContainer listingColl = {this.props.listingColl} />
 
@@ -29,8 +28,18 @@ var Header = React.createClass({
 	render: function() {
 		return (
 			<div className="headerContainer">
-				<h4>ETSY</h4>
-				<input placeholder = "What are you shopping for?" onKeyDown = {this._doSearch} />
+					<h1>ETSY</h1>
+					<span>Clothing & Accessories</span>
+					<span>Jewelry</span>
+					<span>Weddings</span>
+					<span>Entertainment</span>
+					<span>Craft Supplies</span>
+					<span>Tools</span>
+
+				<div id="searchBar">
+					<input placeholder = "Search for items or shops" onKeyDown = {this._doSearch} />
+
+				</div>
 			</div>
 			)
 	}
@@ -49,7 +58,6 @@ var ListingsContainer = React.createClass({
 	render: function() {
 		return (
 			<div id="listingsContainer">
-
 				{this._getJsxArray(this.props.listingColl.models)}
 
 			</div>
@@ -64,16 +72,16 @@ var Listing = React.createClass ({
 	render: function() {
 		return (
 			<div className="listing">
-				<h4>{this.props.listingModel.get('title')}</h4>
-				<img src = {this.props.listingModel.get('Images')[0].url_170x135} />
-				<p class = "price">{this.props.listingModel.get('price')}</p>
-				<div id = "button"><a href = {`#details/${this.props.listingModel.get('listing_id')}`}>full page</a></div>
+				<a href = {`#details/${this.props.listingModel.get('listing_id')}`}>
+					<img src = {this.props.listingModel.get('Images')[0].url_170x135} />	
+					<h4>{this.props.listingModel.get('title')}</h4>
+					<p class = "price">${this.props.listingModel.get('price')}</p>
+
+				</a>
 			</div>
 
 			)
 		}
 })
-
-
 
 export default ListingsView
